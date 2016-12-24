@@ -192,17 +192,19 @@ bool httpGet(const char* url, u8** buf, u32* size, const bool verbose) {
         return false;
 	}
 
-	u32 pos = 0;
+	//u32 pos = 0;
 	u32 dlstartpos = 0;
-	u32 dlpos = 0;
-	Result dlret = HTTPC_RESULTCODE_DOWNLOADPENDING;
+	//u32 dlpos = 0;
+	//Result dlret = HTTPC_RESULTCODE_DOWNLOADPENDING;
 
 	if (!CHECK(httpcGetDownloadSizeState(&context, &dlstartpos, size), "Could not get file size")) return false;
 	
 	*buf = (u8*)std::malloc(*size);
     if (*buf == NULL) {debugPrint(formatErrMessage("Could not allocate enough memory", *size).c_str()); return false;}
 	std::memset(*buf, 0, *size);
-	printf("%lu ", *size);
+	httpcBeginRequest(&context);
+	httpcDownloadData(&context, *buf, *size, NULL);
+	/*printf("%lu ", *size);
 	while (pos < *size && dlret == (s32)HTTPC_RESULTCODE_DOWNLOADPENDING)
 	{
 		u32 sz = *size - pos;
@@ -217,7 +219,8 @@ bool httpGet(const char* url, u8** buf, u32* size, const bool verbose) {
 			printf("Download progress: %lu / %lu", dlpos, *size);
 			gfxFlushBuffers();
 		}
-	}
+	}*/
+	//printf("%lu", dlret);
 	
 	if (verbose) {
 		printf("\n");

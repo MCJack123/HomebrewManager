@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		045262F81E0C967700CF7375 /* Archives.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Archives.h; path = source/Archives.h; sourceTree = "<group>"; };
+		045262FA1E0E130E00CF7375 /* Archives.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = Archives.c; path = source/Archives.c; sourceTree = "<group>"; };
 		047134001C5446C100A3F683 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = source/main.cpp; sourceTree = "<group>"; };
 		539A21511E008449005230DC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		539A21531E008500005230DC /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = source/utils.h; sourceTree = "<group>"; };
@@ -25,6 +26,7 @@
 				539A21551E00C0EE005230DC /* parser.h */,
 				539A21511E008449005230DC /* Makefile */,
 				045262F81E0C967700CF7375 /* Archives.h */,
+				045262FA1E0E130E00CF7375 /* Archives.c */,
 			);
 			sourceTree = "<group>";
 		};

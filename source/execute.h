@@ -77,7 +77,7 @@ Install:
     printf("\n\n\x1b[33mDownloading package...\x1b[37m");
 	if (selectedPackage["location"].find("http://") == std::string::npos) selectedPackage["location"] = "https://raw.githubusercontent.com/MCJack123/HBM-repo/master/files/" + selectedPackage["location"];
 	debugPrint(selectedPackage["location"]);
-	u8 *packageF;
+	/*u8 *packageF;
 	u32 size;
     if (!httpGet(selectedPackage["location"].c_str(), &packageF, &size, true)) {printf("\n\x1b[31mError: Could not download file!\x1b[37m\n"); sleep(3); return;}
 	debugPrint((char*)packageF);
@@ -85,7 +85,7 @@ Install:
     printf("\t\x1b[32mDownload complete!\n\x1b[33mExtracting files...");
     FILE *file = fopen("/hbm_pack.hbp", "wb");
     fputs((char*)packageF, file);
-    fclose(file);
+    fclose(file);*/
     Zip *zipfile = ZipOpen("/hbm_pack.hbp");
     if (zipfile == NULL) {debugPrint("Could not open zip file"); sleep(3); return;}
     ZipFile *packslip = ZipFileRead(zipfile, "PackingSlip", NULL);
